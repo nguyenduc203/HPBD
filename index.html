@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>  
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js" ></script>    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HPBD</title>
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Damion);
+ * {
+	 box-sizing: border-box;
+	 font-weight: normal;
+}
+@import url(https://fonts.googleapis.com/css?family=Damion);
+ * {
+	 box-sizing: border-box;
+	 font-weight: normal;
+}
+ body {
+	 font-family: 'Damion', cursive;
+	 background: #fbefec;
+	 background: -moz-radial-gradient(center, ellipse cover, rgba(251, 239, 236, 1) 0%, rgba(218, 180, 180, 1) 100%);
+	 background: -webkit-radial-gradient(center, ellipse cover, rgba(251, 239, 236, 1) 0%, rgba(218, 180, 180, 1) 100%);
+	 background: radial-gradient(ellipse at center, rgba(251, 239, 236, 1) 0%, rgba(218, 180, 180, 1) 100%);
+	 height: 100vh;
+	 overflow: hidden;
+}
+ body .birthday .add {
+	 margin-top: 40px;
+	 clear: both;
+	 font-family: 'Damion', cursive;
+	 background: transparent;
+	 border: 2px solid #e77572;
+	 color: #e77572;
+	 font-size: 22px;
+	 padding: 14px 28px;
+	 border-radius: 40px;
+	 transition: all 0.23s;
+	 outline: none;
+	 cursor: pointer;
+}
+ body .birthday .add:hover {
+	 background: #e77572;
+	 color: white;
+}
+ body .birthday_inner__modal {
+	 width: 500px;
+	 position: absolute;
+	 left: 0;
+	 right: 0;
+	 transition: all 0.4s;
+	 margin: auto;
+	 text-align: center;
+	 top: 50%;
+	 transform: translateY(-50%) scale(0);
+	 background: white;
+	 border-radius: 20px;
+	 z-index: 2;
+	 padding: 40px 40px 100px 40px;
+	 box-shadow: 0px 3px 10px 0px #e5b4b2;
+}
+ body .birthday_inner__modal .modal_image {
+	 position: absolute;
+	 top: 0;
+	 left: 0;
+	 right: 0;
+	 transform: translateY(-60%);
+}
+ body .birthday_inner__modal .modal_image img {
+	 width: 100px;
+}
+ body .birthday_inner__modal h1 {
+	 color: #e77572;
+	 margin: 0;
+}
+ body .birthday_inner__modal p {
+	 font-family: 'georgia';
+	 font-size: 13px;
+	 color: #b9918e;
+}
+ body .birthday_inner__modal button {
+	 background: #e77572;
+	 color: white;
+	 outline: none;
+	 padding: 20px 20px 20px 20px;
+	 border: none;
+	 width: 100%;
+	 font-size: 20px;
+	 font-family: 'Damion', cursive;
+	 position: absolute;
+	 left: 0;
+	 right: 0;
+	 bottom: 0px;
+	 -webkit-transition: all 0.2s;
+	 transition: all 0.2s;
+	 cursor: pointer;
+	 border-bottom-right-radius: 20px;
+	 border-bottom-left-radius: 20px;
+}
+ body .birthday_inner__modal button:hover {
+	 background: #e3605c;
+}
+ body .birthday_inner .stage1 {
+	 display: block;
+}
+ body .birthday_inner__stage {
+	 width: 500px;
+	 position: absolute;
+	 left: 0;
+	 right: 0;
+	 margin: auto;
+	 text-align: center;
+	 top: 50%;
+	 display: none;
+	 transform: translateY(-50%);
+}
+ body .birthday_inner__stage h1 {
+	 color: #e77572;
+	 margin: 0;
+}
+ body .birthday_inner__stage h2 {
+	 font-family: 'georgia';
+	 font-size: 12px;
+	 color: #b9918e;
+	 line-height: 18px;
+	 margin: 0;
+}
+ body .birthday_inner__stage .mix {
+	 margin: 80px 0px 10px 0px;
+	 position: relative;
+}
+ body .birthday_inner__stage .mix_spoon {
+	 position: absolute;
+	 top: -37px;
+	 left: 200px;
+	 -webkit-transform: rotate(0deg) translateX(15px) translateY(3px) rotate(0deg) scale(1);
+}
+ body .birthday_inner__stage .mix .move {
+	 animation: mix 1s 0s linear;
+}
+ body .birthday_inner__stage img.intro {
+	 width: 300px;
+	 transform: scale(0);
+	 animation: bounce 0.6s 1s forwards, moveup 0.6s 2s forwards;
+	 position: relative;
+	 top: 0px;
+}
+ body .birthday_inner__stage .oven {
+	 margin-top: 50px;
+	 margin-bottom: -40px;
+}
+ body .birthday_inner__stage .oven img {
+	 width: 290px;
+	 position: relative;
+	 left: -10px;
+}
+ body .birthday_inner__stage .tin img {
+	 width: 90px;
+}
+ body .birthday_inner__stage .candle {
+	 position: Relative;
+	 opacity: 0;
+	 animation: candle 1s 1.3s forwards;
+	 top: 10px;
+}
+ body .birthday_inner__stage .candle img {
+	 width: 10px;
+}
+ body .birthday_inner__stage .startagain {
+	 position: absolute;
+	 right: 0;
+	 top: 350px;
+	 font-size: 24px;
+	 color: #e77572;
+}
+ body .birthday_inner__stage button {
+	 clear: both;
+	 font-family: 'Damion', cursive;
+	 background: transparent;
+	 border: 2px solid #e77572;
+	 color: #e77572;
+	 font-size: 22px;
+	 padding: 14px 28px;
+	 border-radius: 40px;
+	 transition: all 0.23s;
+	 outline: none;
+	 cursor: pointer;
+}
+ body .birthday_inner__stage button:hover {
+	 background: #e77572;
+	 color: white;
+}
+ body .birthday_inner__stage .start {
+	 margin-top: 69px;
+	 animation: in 0.8s 2.9s forwards;
+	 position: relative;
+	 top: -20px;
+	 opacity: 0;
+}
+ .sa {
+	 margin-top: 70px;
+	 display: none;
+}
+ .svg {
+	 margin-bottom: 40px;
+}
+ svg {
+	 width: auto;
+	 height: 90px;
+	 margin-bottom: -20px;
+	 display: none;
+}
+ @keyframes bounce {
+	 0% {
+		 transform: scale(0);
+	}
+	 25% {
+		 transform: scale(1.06);
+	}
+	 50% {
+		 transform: scale(0.965);
+	}
+	 75% {
+		 transform: scale(1.02);
+	}
+	 100% {
+		 transform: scale(1);
+	}
+}
+ @keyframes in {
+	 from {
+		 opacity: 0;
+	}
+	 to {
+		 opacity: 1;
+	}
+}
+ @keyframes moveup {
+	 from {
+		 top: 0;
+	}
+	 to {
+		 top: -30px;
+	}
+}
+ @keyframes mix {
+	 0% {
+		 transform: translateX(0px);
+	}
+	 50% {
+		 transform: translateX(28px);
+	}
+	 100% {
+		 transform: translateX(0px);
+	}
+}
+ @keyframes candle {
+	 from {
+		 opacity: 0;
+	}
+	 to {
+		 opacity: 1;
+	}
+}
+ 
+
+.gallery{
+	margin-left: auto;
+	margin-bottom: 100px;
+	text-align: initial;
+	position:relative;
+	width:168px;
+	height:231px;
+	transform-style:preserve-3d;
+	animation:rotate 35s linear infinite;
+  }
+  
+  @keyframes rotate{
+	from{
+	  transform:perspective(1200px) rotateY(0deg);
+	}
+	
+	to{
+	  transform:perspective(1200px) rotateY(360deg);
+	}
+  }
+  
+  .gallery span{
+	position:absolute;
+	width:100%;
+	height:100%;
+	transform-origin:center;
+	transform-style:preserve-3d;
+	transform:rotateY(calc(var(--i) * 45deg)) translateZ(380px);
+  }
+  
+  .gallery span img{
+	position:absolute;
+	width:100%;
+	height:100%;
+	object-fit:cover;
+  }
+    </style>
+</head>
+<script>
+    var i = 0;
+    var speed = 100;
+    function type1() {
+    if(i < txt.length) {
+        document.getElementById("demo").innerHTML += txt.charAt(i);
+        i++;
+        setTimeout(type1, speed);
+    }
+}</script>
+<body>
+    <audio controls autoplay loop>
+        <source src="./music/Happy Birthday To You - KTM.mp3">
+    </audio>
+    <div class="birthday">
+        <div class="birthday_inner">
+          <div class="birthday_inner__modal">
+            <div class="modal_image">
+              <img /></div>
+            <div class="modal_content">
+              <h1>Title</h1>
+              <p>Content</p>
+              <button>OK, Let's go</button>
+            </div>
+          </div>
+          <div class="birthday_inner__stage stage1">
+            <div class="intro_cake">
+              <img class="intro" src="" />
+              <div class="gallery">
+                <span style="--i:1">
+                  <img src="../HPBD2711/images/1.png" alt="" />
+                </span>
+                <span style="--i:2">
+                  <img src="../HPBD2711/images/2.png" alt="" />
+                </span>
+                <span style="--i:3">
+                  <img src="../HPBD2711/images/3.png" alt="" />
+                </span>
+                <span style="--i:4">
+                  <img src="../HPBD2711/images/4.png" alt="" />
+                </span>
+                <span style="--i:5">
+                  <img src="../HPBD2711/images/4.png" alt="" />
+                </span>
+                <span style="--i:6">
+                  <img src="../HPBD2711/images/3.png" alt="" />
+                </span>
+                <span style="--i:7">
+                  <img src="../HPBD2711/images/2.png" alt="" />
+                </span>
+                <span style="--i:8">
+                  <img src="../HPBD2711/images/1.png" alt="" />
+                </span>
+              </div>
+            </div>
+            <button class="start">Click</button>
+          </div>
+      </div>
+</body>
+<script src="script.js"></script>
+</html>

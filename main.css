@@ -1,0 +1,476 @@
+@import url(https://fonts.googleapis.com/css?family=Damion);
+* {
+    box-sizing: border-box;
+    font-weight: normal;
+}
+@import url(https://fonts.googleapis.com/css?family=Damion);
+* {
+    box-sizing: border-box;
+    font-weight: normal;
+}
+body {
+    font-family: 'Damion', cursive;
+    background: #fbefec;
+    background: -moz-radial-gradient(center, ellipse cover, rgba(251, 239, 236, 1) 0%, rgba(218, 180, 180, 1) 100%);
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(251, 239, 236, 1) 0%, rgba(218, 180, 180, 1) 100%);
+    background: radial-gradient(ellipse at center, rgba(251, 239, 236, 1) 0%, rgba(218, 180, 180, 1) 100%);
+    height: 100vh;
+    overflow: hidden;
+}
+body .birthday .add {
+    margin-top: 40px;
+    clear: both;
+    font-family: 'Damion', cursive;
+    background: transparent;
+    border: 2px solid #e77572;
+    color: #e77572;
+    font-size: 22px;
+    padding: 14px 28px;
+    border-radius: 40px;
+    transition: all 0.23s;
+    outline: none;
+    cursor: pointer;
+}
+body .birthday .add:hover {
+    background: #e77572;
+    color: white;
+}
+body .birthday_inner__modal {
+    width: 500px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    transition: all 0.4s;
+    margin: auto;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%) scale(0);
+    background: white;
+    border-radius: 20px;
+    z-index: 2;
+    padding: 40px 40px 100px 40px;
+    box-shadow: 0px 3px 10px 0px #e5b4b2;
+}
+body .birthday_inner__modal .modal_image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: translateY(-60%);
+}
+body .birthday_inner__modal .modal_image img {
+    width: 100px;
+}
+body .birthday_inner__modal h1 {
+    color: #e77572;
+    margin: 0;
+}
+body .birthday_inner__modal p {
+    font-family: 'georgia';
+    font-size: 13px;
+    color: #b9918e;
+}
+body .birthday_inner__modal button {
+    background: #e77572;
+    color: white;
+    outline: none;
+    padding: 20px 20px 20px 20px;
+    border: none;
+    width: 100%;
+    font-size: 20px;
+    font-family: 'Damion', cursive;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0px;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+    cursor: pointer;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+body .birthday_inner__modal button:hover {
+    background: #e3605c;
+}
+body .birthday_inner .stage1 {
+    display: block;
+}
+body .birthday_inner__stage {
+    width: 500px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+    top: 50%;
+    display: none;
+    transform: translateY(-50%);
+}
+body .birthday_inner__stage h1 {
+    color: #e77572;
+    margin: 0;
+}
+body .birthday_inner__stage h2 {
+    font-family: 'georgia';
+    font-size: 12px;
+    color: #b9918e;
+    line-height: 18px;
+    margin: 0;
+}
+body .birthday_inner__stage .mix {
+    margin: 80px 0px 10px 0px;
+    position: relative;
+}
+body .birthday_inner__stage .mix_spoon {
+    position: absolute;
+    top: -37px;
+    left: 200px;
+    -webkit-transform: rotate(0deg) translateX(15px) translateY(3px) rotate(0deg) scale(1);
+}
+body .birthday_inner__stage .mix .move {
+    animation: mix 1s 0s linear;
+}
+body .birthday_inner__stage img.intro {
+    width: 300px;
+    transform: scale(0);
+    animation: bounce 0.6s 1s forwards, moveup 0.6s 2s forwards;
+    position: relative;
+    top: 0px;
+}
+body .birthday_inner__stage .oven {
+    margin-top: 50px;
+    margin-bottom: -40px;
+}
+body .birthday_inner__stage .oven img {
+    width: 290px;
+    position: relative;
+    left: -10px;
+}
+body .birthday_inner__stage .tin img {
+    width: 90px;
+}
+body .birthday_inner__stage .candle {
+    position: Relative;
+    opacity: 0;
+    animation: candle 1s 1.3s forwards;
+    top: 10px;
+}
+body .birthday_inner__stage .candle img {
+    width: 10px;
+}
+body .birthday_inner__stage .startagain {
+    position: absolute;
+    right: 0;
+    top: 350px;
+    font-size: 24px;
+    color: #e77572;
+}
+body .birthday_inner__stage button {
+    clear: both;
+    font-family: 'Damion', cursive;
+    background: transparent;
+    border: 2px solid #e77572;
+    color: #e77572;
+    font-size: 22px;
+    padding: 14px 28px;
+    border-radius: 40px;
+    transition: all 0.23s;
+    outline: none;
+    cursor: pointer;
+}
+body .birthday_inner__stage button:hover {
+    background: #e77572;
+    color: white;
+}
+body .birthday_inner__stage .start {
+    margin-top: 69px;
+    animation: in 0.8s 2.9s forwards;
+    position: relative;
+    top: -20px;
+    opacity: 0;
+}
+.sa {
+    margin-top: 70px;
+    display: none;
+}
+.svg {
+    margin-bottom: 40px;
+}
+svg {
+    width: auto;
+    height: 90px;
+    margin-bottom: -20px;
+    display: none;
+}
+@keyframes bounce {
+    0% {
+        transform: scale(0);
+   }
+    25% {
+        transform: scale(1.06);
+   }
+    50% {
+        transform: scale(0.965);
+   }
+    75% {
+        transform: scale(1.02);
+   }
+    100% {
+        transform: scale(1);
+   }
+}
+@keyframes in {
+    from {
+        opacity: 0;
+   }
+    to {
+        opacity: 1;
+   }
+}
+@keyframes moveup {
+    from {
+        top: 0;
+   }
+    to {
+        top: -30px;
+   }
+}
+@keyframes mix {
+    0% {
+        transform: translateX(0px);
+   }
+    50% {
+        transform: translateX(28px);
+   }
+    100% {
+        transform: translateX(0px);
+   }
+}
+@keyframes candle {
+    from {
+        opacity: 0;
+   }
+    to {
+        opacity: 1;
+   }
+}
+
+
+.gallery{
+   margin-left: auto;
+   margin-bottom: 100px;
+   text-align: initial;
+   position:relative;
+   width:168px;
+   height:231px;
+   transform-style:preserve-3d;
+   animation:rotate 35s linear infinite;
+ }
+ 
+ @keyframes rotate{
+   from{
+     transform:perspective(1200px) rotateY(0deg);
+   }
+   
+   to{
+     transform:perspective(1200px) rotateY(360deg);
+   }
+ }
+ 
+ .gallery span{
+   position:absolute;
+   width:100%;
+   height:100%;
+   transform-origin:center;
+   transform-style:preserve-3d;
+   transform:rotateY(calc(var(--i) * 45deg)) translateZ(380px);
+ }
+ 
+ .gallery span img{
+   position:absolute;
+   width:100%;
+   height:100%;
+   object-fit:cover;
+ }
+
+ .birthday > .before, .birthday > .after {
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    pointer-events: none;
+    z-index: 99999999;
+    border-radius: 50%;
+    box-shadow: -120px -218.66667px rgba(236, 93, 18, 0.9), 248px -16.66667px #00ff84, 190px 16.33333px #002bff, -113px -308.66667px #ff009d, -109px -287.66667px #ffb300, -50px -313.66667px #ff006e, 226px -31.66667px #ff4000, 180px -351.66667px #ff00d0, -12px -338.66667px #00f6ff, 220px -388.66667px #99ff00, -69px -27.66667px #ff0400, -111px -339.66667px #6200ff, 155px -237.66667px #00ddff, -152px -380.66667px #00ffd0, -50px -37.66667px #00ffdd, -95px -175.66667px #a6ff00, -88px 10.33333px #0d00ff, 112px -309.66667px #005eff, 69px -415.66667px #ff00a6, 168px -100.66667px #ff004c, -244px 24.33333px #ff6600, 97px -325.66667px #ff0066, -211px -182.66667px #00ffa2, 236px -126.66667px #b700ff, 140px -196.66667px #9000ff, 125px -175.66667px #00bbff, 118px -381.66667px #ff002f, 144px -111.66667px #ffae00, 36px -78.66667px #f600ff, -63px -196.66667px #c800ff, -218px -227.66667px #d4ff00, -134px -377.66667px #ea00ff, -36px -412.66667px #ff00d4, 209px -106.66667px #00fff2, 91px -278.66667px #000dff, -22px -191.66667px #9dff00, 139px -392.66667px #a6ff00, 56px -2.66667px #0099ff, -156px -276.66667px #ea00ff, -163px -233.66667px #00fffb, -238px -346.66667px #00ff73, 62px -363.66667px #0088ff, 244px -170.66667px #0062ff, 224px -142.66667px #b300ff, 141px -208.66667px #9000ff, 211px -285.66667px #ff6600, 181px -128.66667px #1e00ff, 90px -123.66667px #c800ff, 189px 70.33333px #00ffc8, -18px -383.66667px #00ff33, 100px -6.66667px #ff008c;
+    -moz-animation: 1s bang ease-out infinite backwards, 1s gravity ease-in infinite backwards, 5s position linear infinite backwards;
+    -webkit-animation: 1s bang ease-out infinite backwards, 1s gravity ease-in infinite backwards, 5s position linear infinite backwards;
+    -o-animation: 1s bang ease-out infinite backwards, 1s gravity ease-in infinite backwards, 5s position linear infinite backwards;
+    -ms-animation: 1s bang ease-out infinite backwards, 1s gravity ease-in infinite backwards, 5s position linear infinite backwards;
+    animation: 1s bang ease-out infinite backwards, 1s gravity ease-in infinite backwards, 5s position linear infinite backwards; }
+  
+  .birthday > .after {
+    -moz-animation-delay: 1.25s, 1.25s, 1.25s;
+    -webkit-animation-delay: 1.25s, 1.25s, 1.25s;
+    -o-animation-delay: 1.25s, 1.25s, 1.25s;
+    -ms-animation-delay: 1.25s, 1.25s, 1.25s;
+    animation-delay: 1.25s, 1.25s, 1.25s;
+    -moz-animation-duration: 1.25s, 1.25s, 6.25s;
+    -webkit-animation-duration: 1.25s, 1.25s, 6.25s;
+    -o-animation-duration: 1.25s, 1.25s, 6.25s;
+    -ms-animation-duration: 1.25s, 1.25s, 6.25s;
+    animation-duration: 1.25s, 1.25s, 6.25s; }
+  
+  @-webkit-keyframes bang {
+    from {
+      box-shadow: 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white; } }
+  @-moz-keyframes bang {
+    from {
+      box-shadow: 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white; } }
+  @-o-keyframes bang {
+    from {
+      box-shadow: 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white; } }
+  @-ms-keyframes bang {
+    from {
+      box-shadow: 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white; } }
+  @keyframes bang {
+    from {
+      box-shadow: 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white; } }
+  @-webkit-keyframes gravity {
+    to {
+      transform: translateY(200px);
+      -moz-transform: translateY(200px);
+      -webkit-transform: translateY(200px);
+      -o-transform: translateY(200px);
+      -ms-transform: translateY(200px);
+      opacity: 0; } }
+  @-moz-keyframes gravity {
+    to {
+      transform: translateY(200px);
+      -moz-transform: translateY(200px);
+      -webkit-transform: translateY(200px);
+      -o-transform: translateY(200px);
+      -ms-transform: translateY(200px);
+      opacity: 0; } }
+  @-o-keyframes gravity {
+    to {
+      transform: translateY(200px);
+      -moz-transform: translateY(200px);
+      -webkit-transform: translateY(200px);
+      -o-transform: translateY(200px);
+      -ms-transform: translateY(200px);
+      opacity: 0; } }
+  @-ms-keyframes gravity {
+    to {
+      transform: translateY(200px);
+      -moz-transform: translateY(200px);
+      -webkit-transform: translateY(200px);
+      -o-transform: translateY(200px);
+      -ms-transform: translateY(200px);
+      opacity: 0; } }
+  @keyframes gravity {
+    to {
+      transform: translateY(200px);
+      -moz-transform: translateY(200px);
+      -webkit-transform: translateY(200px);
+      -o-transform: translateY(200px);
+      -ms-transform: translateY(200px);
+      opacity: 0; } }
+  @-webkit-keyframes position {
+    0%, 19.9% {
+      margin-top: 10%;
+      margin-left: 40%; }
+  
+    20%, 39.9% {
+      margin-top: 40%;
+      margin-left: 30%; }
+  
+    40%, 59.9% {
+      margin-top: 20%;
+      margin-left: 70%; }
+  
+    60%, 79.9% {
+      margin-top: 30%;
+      margin-left: 20%; }
+  
+    80%, 99.9% {
+      margin-top: 30%;
+      margin-left: 80%; } }
+  @-moz-keyframes position {
+    0%, 19.9% {
+      margin-top: 10%;
+      margin-left: 40%; }
+  
+    20%, 39.9% {
+      margin-top: 40%;
+      margin-left: 30%; }
+  
+    40%, 59.9% {
+      margin-top: 20%;
+      margin-left: 70%; }
+  
+    60%, 79.9% {
+      margin-top: 30%;
+      margin-left: 20%; }
+  
+    80%, 99.9% {
+      margin-top: 30%;
+      margin-left: 80%; } }
+  @-o-keyframes position {
+    0%, 19.9% {
+      margin-top: 10%;
+      margin-left: 40%; }
+  
+    20%, 39.9% {
+      margin-top: 40%;
+      margin-left: 30%; }
+  
+    40%, 59.9% {
+      margin-top: 20%;
+      margin-left: 70%; }
+  
+    60%, 79.9% {
+      margin-top: 30%;
+      margin-left: 20%; }
+  
+    80%, 99.9% {
+      margin-top: 30%;
+      margin-left: 80%; } }
+  @-ms-keyframes position {
+    0%, 19.9% {
+      margin-top: 10%;
+      margin-left: 40%; }
+  
+    20%, 39.9% {
+      margin-top: 40%;
+      margin-left: 30%; }
+  
+    40%, 59.9% {
+      margin-top: 20%;
+      margin-left: 70%; }
+  
+    60%, 79.9% {
+      margin-top: 30%;
+      margin-left: 20%; }
+  
+    80%, 99.9% {
+      margin-top: 30%;
+      margin-left: 80%; } }
+  @keyframes position {
+    0%, 19.9% {
+      margin-top: 10%;
+      margin-left: 40%; }
+  
+    20%, 39.9% {
+      margin-top: 40%;
+      margin-left: 30%; }
+  
+    40%, 59.9% {
+      margin-top: 20%;
+      margin-left: 70%; }
+  
+    60%, 79.9% {
+      margin-top: 30%;
+      margin-left: 20%; }
+  
+    80%, 99.9% {
+      margin-top: 30%;
+      margin-left: 80%; } }
